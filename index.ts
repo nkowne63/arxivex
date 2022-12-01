@@ -40,4 +40,5 @@ for await (const line of readLines(Deno.stdin)) {
 articles.forEach(({ url, title }) => {
   console.log(`URL: ${url}`);
   console.log(`Title: ${title}`);
+  console.log("");
 });
