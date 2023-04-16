@@ -1,4 +1,4 @@
-import { readLines } from "io";
+import { readLines } from "https://deno.land/std@0.166.0/io/mod.ts";
 
 const articles: {
   url: string;
