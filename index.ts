@@ -37,8 +37,13 @@ for await (const line of readLines(Deno.stdin)) {
   }
 }
 
-articles.forEach(({ url, title }) => {
-  console.log(`URL: ${url}`);
-  console.log(`Title: ${title}`);
-  console.log("");
-});
+articles
+  .filter(
+    ({ url: targetURL }, index, self) =>
+      self.findIndex(({ url }) => url === targetURL) === index
+  )
+  .forEach(({ url, title }) => {
+    console.log(`URL: ${url}`);
+    console.log(`Title: ${title}`);
+    console.log("");
+  });
